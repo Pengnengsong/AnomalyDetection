@@ -20,9 +20,6 @@ class Node(object):
         self.neighbor_list = []  # list of references for neighbor nodes
         self.node_degree = 0  # number of neighbors
 
-        # self.linksink_list = []                                # list of Nodes communicating with sink
-        # self.sink_degree = 0                                   # number of Nodes communicating with sink
-
         self.normal_list = []  # Save N normal Historical Data
 
     def get_pos(self):  # return positions, DEPRECATED
