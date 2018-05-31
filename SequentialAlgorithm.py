@@ -3,7 +3,7 @@ from InitWSN import *
 import pickle
 
 
-def confidence_intervals1(node_list, event_index, n, t_value):
+def confidence_intervals(node_list, event_index, n, t_value):
     for i in range(len(node_list)):
         if i in event_index:
             status = node_list[i].check_event2(n, t_value, 2)
