@@ -77,7 +77,7 @@ class Node(object):
         return self.status
 
 
-    # Spatio-Temporal algorithm
+    # Sequential algorithm
 
     def history_data(self, n):  # Save the most recent n data
         for i in range(n - len(self.normal_list)):
@@ -93,18 +93,6 @@ class Node(object):
         max_interval = med + (np.std(data) / np.sqrt(n) * t_value) * np.sqrt(1 + n)
         # print(min_interval, max_interval)
         return min_interval, max_interval
-
-    def check_event1(self, n, t_value, NodeFlag=0):
-        normal_list = self.history_data(n)
-        nmin_interval, nmax_interval = self.confidence_intervals(normal_list, t_value)
-        val = self.data_acquiste(NodeFlag)
-        if nmin_interval <= val <= nmax_interval:
-            self.normal_list.pop(0)
-            self.normal_list.append(val)
-            self.status = 0
-        else:
-            self.status = 1
-        return self.status
 
     def check_event2(self, n, t_value, NodeFlag=0):
         normal_list = self.history_data(n)
@@ -134,24 +122,6 @@ class Node(object):
                 self.status = 2
             else:
                 self.status = 1
-        return self.status
-
-
-
-    def check_event3(self, n, t_value, NodeFlag=0):
-        normal_list = self.history_data(n)
-        min_interval, max_interval = self.confidence_intervals(normal_list, t_value)
-        val = self.data_acquiste(NodeFlag)
-        t = t1 = 0.1
-        if min_interval <= val <= max_interval:
-            self.normal_list.pop(0)
-            self.normal_list.append(val)
-            self.status = 0
-        else:
-            if (val - max_interval) / (max_interval - min_interval) < 1 or (val - min_interval) / (
-                        max_interval - min_interval) < 1:
-                self.status = 5
-
         return self.status
 
 
