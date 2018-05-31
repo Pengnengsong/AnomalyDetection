@@ -9,4 +9,12 @@ This is the experimental code for [PENG Neng-song,Anomaly detection method for w
 
 <br>
 
+# One experiment snapshot
+![](https://github.com/Pengnengsong/AnomalyDetection/tree/master/resultPicture/wsn_400.png)
+
+<br>
+# One Experimental results
+![](https://github.com/Pengnengsong/AnomalyDetection/tree/master/resultPicture/rate_EFPR.png)
+
+<br>
   This is my [personal website](http://jsynk.cn). Share some java and big data technologies. Welcome to visit.
