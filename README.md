@@ -1,6 +1,7 @@
 # AnomalyDetection
 ### 《Anomaly detection method for wireless sensor networks based on time series data》
-
+---
+<br>
  This is the experimental code for [PENG Neng-song,Anomaly detection method for wireless sensor networks based on time series data](http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFQ&dbname=CJFDTEMP&filename=CGJS201804017&v=Mjg2ODFpckJmYkc0SDluTXE0OUVZNFI4ZVgxTHV4WVM3RGgxVDNxVHJXTTFGckNVUkxLZll1VnVGeTdtVXJyTUo=) and is compared with the literature 《Cao Dong-lei A Fault-Tolerant Algorithm for Event Region Detection in Wireless Sensor Network》
  ---
 <br>
