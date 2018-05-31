@@ -30,60 +30,6 @@ def confidence_intervals1(node_list, event_index, n, t_value):
     return node_list
 
 
-def confidence_intervals(node_list, event_index, n, t_value):
-    for i in range(len(node_list)):  # for each sensor
-        if i in event_index:
-            status = node_list[i].check_event1(n, t_value, 2)
-        #else:
-            #status = node_list[i].check_event(a, m, T, R, E, V, C)
-            neighbor_list = node_list[i].neighbor_list
-            count = 0
-            if status == 1:
-                if len(neighbor_list) != 0:
-                    for j in range(len(neighbor_list)):                # broadcasting status to all neighbors
-                        if neighbor_list[j].ID in event_index:
-                            nstatus = neighbor_list[j].check_event1(n, t_value, 2)
-                        elif neighbor_list[j].status == 0:
-                            nstatus = neighbor_list[j].check_event1(n, t_value)
-                        else:
-                            nstatus = neighbor_list[j].check_event1(n, t_value)
-                        if nstatus == 1:
-                            count += 1
-
-            if count >= len(neighbor_list) / 2:
-                if status == 0:
-                    node_list[i].last_status = 4
-                else:
-                    node_list[i].last_status = 3
-            else:
-                if status != 0:
-                    node_list[i].last_status = 4
-
-        else:
-            status = node_list[i].check_event1(n, t_value)
-            neighbor_list = node_list[i].neighbor_list
-            count = 0
-            if status == 1:
-                if len(neighbor_list) != 0:
-                    for j in range(len(neighbor_list)):                # broadcasting status to all neighbors
-                        if neighbor_list[j].status == 0:
-                            nstatus = neighbor_list[j].check_event1(n, t_value)
-                        else:
-                            nstatus = neighbor_list[j].status
-                        if nstatus == 1:
-                            count += 1
-
-            if count >= len(neighbor_list) / 2:
-                if status == 0:
-                    node_list[i].last_status = 4
-                else:
-                    node_list[i].last_status = 3
-            else:
-                if status != 0:
-                    node_list[i].last_status = 4
-
-    return node_list
-
 
 # Event Area
 def event_Region(node_list, x1, y1, x2, y2):   # x1 < x2   y1 < y2
